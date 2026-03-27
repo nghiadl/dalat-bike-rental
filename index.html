@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dalat Bike Rental & Adventure Tours</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .lang-vi { display: none; }
+        body.lang-vi-active .lang-en { display: none; }
+        body.lang-vi-active .lang-vi { display: block; }
+        /* Cập nhật hình ảnh header thành người đạp xe trong thành phố */
+        .hero-gradient {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1541625602330-2277a4c46182?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .bike-card img {
+            transition: transform 0.5s ease;
+        }
+        .bike-card:hover img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 font-bold text-2xl text-emerald-600 flex items-center gap-2">
+                    <i class="fas fa-bicycle"></i> DALAT BIKE
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="hover:text-emerald-600 transition font-medium">
+                        <span class="lang-en">Home</span>
+                        <span class="lang-vi">Trang chủ</span>
+                    </a>
+                    <a href="#rentals" class="hover:text-emerald-600 transition font-medium">
+                        <span class="lang-en">Rentals</span>
+                        <span class="lang-vi">Thuê xe</span>
+                    </a>
+                    <a href="#tours" class="hover:text-emerald-600 transition font-medium">
+                        <span class="lang-en">Tours</span>
+                        <span class="lang-vi">Tour du lịch</span>
+                    </a>
+                    <a href="#contact" class="hover:text-emerald-600 transition font-medium">
+                        <span class="lang-en">Contact</span>
+                        <span class="lang-vi">Liên hệ</span>
+                    </a>
+                    <button onclick="toggleLang()" class="bg-emerald-600 text-white px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-emerald-700 transition shadow-md">
+                        <span class="lang-en">Tiếng Việt</span>
+                        <span class="lang-vi">English</span>
+                    </button>
+                </div>
+                <div class="md:hidden">
+                    <button onclick="toggleLang()" class="text-sm font-bold p-2 bg-emerald-100 rounded-lg">
+                        <span class="lang-en">VN</span>
+                        <span class="lang-vi">EN</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient h-[85vh] flex items-center justify-center text-white text-center px-4">
+        <div class="max-w-4xl">
+            <h1 class="text-4xl md:text-7xl font-bold mb-6 drop-shadow-lg">
+                <span class="lang-en">Ride Through Dalat's Beauty</span>
+                <span class="lang-vi">Đạp xe xuyên qua vẻ đẹp Đà Lạt</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-10 max-w-2xl mx-auto drop-shadow-md font-light">
+                <span class="lang-en">Experience the misty city with our high-end Giant and Trek mountain bikes.</span>
+                <span class="lang-vi">Trải nghiệm thành phố sương mù cùng các dòng xe địa hình Giant và Trek cao cấp.</span>
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#rentals" class="bg-emerald-600 hover:bg-emerald-700 text-white px-10 py-4 rounded-full font-bold transition-all transform hover:scale-105 shadow-xl inline-block">
+                    <span class="lang-en">View Rentals</span>
+                    <span class="lang-vi">Xem mẫu xe</span>
+                </a>
+                <a href="https://wa.me/84911802901" target="_blank" class="bg-white/20 backdrop-blur-md hover:bg-white/30 text-white border border-white/50 px-10 py-4 rounded-full font-bold transition-all inline-block">
+                    <span class="lang-en">Chat with Us</span>
+                    <span class="lang-vi">Nhắn tin tư vấn</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Rental Section -->
+    <section id="rentals" class="py-24 max-w-7xl mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold mb-6 text-gray-900">
+                <span class="lang-en">Choose Your Ride</span>
+                <span class="lang-vi">Chọn chiếc xe của bạn</span>
+            </h2>
+            <div class="bg-orange-50 border-2 border-orange-200 rounded-2xl p-6 inline-block text-left shadow-sm">
+                <div class="flex items-center gap-4">
+                    <div class="bg-orange-500 text-white p-3 rounded-xl">
+                        <i class="fas fa-calendar-check text-xl"></i>
+                    </div>
+                    <div>
+                        <p class="font-bold text-orange-800 text-lg">
+                            <span class="lang-en">200,000 VND / Day</span>
+                            <span class="lang-vi">200.000 VNĐ / Ngày</span>
+                        </p>
+                        <p class="text-orange-600 text-sm">
+                            <span class="lang-en">Return by 08:00 PM (Daily rates only)</span>
+                            <span class="lang-vi">Trả xe trước 20h tối (Chỉ tính theo ngày)</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <!-- Giant XTC 800 -->
+            <div class="bike-card bg-white rounded-3xl shadow-lg overflow-hidden border border-gray-100 group">
+                <div class="h-64 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1576435728678-68d0fbf94e91?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                         alt="Giant XTC 800"
+                         onerror="this.src='https://via.placeholder.com/800x600?text=Giant+XTC+800'"
+                         class="w-full h-full object-cover">
+                    <div class="absolute top-4 right-4 bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-full">GIANT</div>
+                </div>
+                <div class="p-8">
+                    <h3 class="text-2xl font-bold mb-3 group-hover:text-emerald-600 transition">Giant XTC 800</h3>
+                    <p class="text-gray-500 mb-6 leading-relaxed">
+                        <span class="lang-en">Stable and lightweight frame, perfect for Dalat's mountain roads.</span>
+                        <span class="lang-vi">Khung sườn nhẹ và ổn định, lý tưởng cho đường đồi núi Đà Lạt.</span>
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-xl font-bold text-gray-900">200k/day</span>
+                        <a href="https://wa.me/84911802901" class="text-emerald-600 font-semibold hover:underline">Book Now &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Giant XTC 820 -->
+            <div class="bike-card bg-white rounded-3xl shadow-lg overflow-hidden border border-gray-100 group">
+                <div class="h-64 overflow-hidden relative">
+                    <img src="https://giant.vn/wp-content/uploads/2024/01/XTC820_LightGray_1.jpg"
+                         alt="Giant XTC 820"
+                         onerror="this.src='https://via.placeholder.com/800x600?text=Giant+XTC+820'"
+                         class="w-full h-full object-cover">
+                    <div class="absolute top-4 right-4 bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-full">GIANT</div>
+                </div>
+                <div class="p-8">
+                    <h3 class="text-2xl font-bold mb-3 group-hover:text-emerald-600 transition">Giant XTC 820</h3>
+                    <p class="text-gray-500 mb-6 leading-relaxed">
+                        <span class="lang-en">Upgraded suspension and transmission for smooth trail riding.</span>
+                        <span class="lang-vi">Hệ thống giảm xóc và bộ truyền động nâng cấp cho hành trình mượt mà.</span>
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-xl font-bold text-gray-900">200k/day</span>
+                        <a href="https://wa.me/84911802901" class="text-emerald-600 font-semibold hover:underline">Book Now &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Trek Marlin 5 -->
+            <div class="bike-card bg-white rounded-3xl shadow-lg overflow-hidden border border-gray-100 group">
+                <div class="h-64 overflow-hidden relative">
+                    <img src="https://down-vn.img.susercontent.com/file/vn-11134201-7r98o-lqeec64mv8dz54@resize_w450_nl.webp"
+                         alt="Trek Marlin 5"
+                         onerror="this.src='https://via.placeholder.com/800x600?text=Trek+Marlin+5'"
+                         class="w-full h-full object-cover">
+                    <div class="absolute top-4 right-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">TREK</div>
+                </div>
+                <div class="p-8">
+                    <h3 class="text-2xl font-bold mb-3 group-hover:text-emerald-600 transition">Trek Marlin 5</h3>
+                    <p class="text-gray-500 mb-6 leading-relaxed">
+                        <span class="lang-en">Reliable adventure bike with hydraulic disc brakes for safety.</span>
+                        <span class="lang-vi">Xe địa hình đáng tin cậy với phanh đĩa dầu an toàn vượt trội.</span>
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-xl font-bold text-gray-900">200k/day</span>
+                        <a href="https://wa.me/84911802901" class="text-emerald-600 font-semibold hover:underline">Book Now &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Adventure Tours Section -->
+    <section id="tours" class="py-24 bg-emerald-900 text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div class="relative z-10">
+                    <span class="text-emerald-400 font-bold uppercase tracking-widest text-sm mb-4 block">International Friendly</span>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-8 leading-tight">
+                        <span class="lang-en">Exclusive Adventure Tours</span>
+                        <span class="lang-vi">Tour du lịch mạo hiểm độc quyền</span>
+                    </h2>
+                    <p class="text-emerald-100/80 mb-8 text-lg leading-relaxed">
+                        <span class="lang-en">Join our specialized cycling tours. We take you through pine forests, coffee plantations, and hidden mountain paths that most tourists never see.</span>
+                        <span class="lang-vi">Tham gia các tour đạp xe chuyên nghiệp. Chúng tôi đưa bạn qua rừng thông, đồi cà phê và những con đường núi ẩn mình mà ít du khách biết đến.</span>
+                    </p>
+                    <div class="space-y-4 mb-10">
+                        <div class="flex items-start gap-4">
+                            <div class="bg-emerald-800 p-2 rounded-lg text-emerald-400 mt-1">
+                                <i class="fas fa-mountain"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold"><span class="lang-en">Extreme Mountain Biking</span><span class="lang-vi">Đạp xe địa hình mạo hiểm</span></h4>
+                                <p class="text-emerald-100/60 text-sm">Hard-core trails for experienced riders.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-emerald-800 p-2 rounded-lg text-emerald-400 mt-1">
+                                <i class="fas fa-map-marked-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold"><span class="lang-en">Countryside Exploration</span><span class="lang-vi">Khám phá vùng ngoại ô</span></h4>
+                                <p class="text-emerald-100/60 text-sm">Scenic routes through local villages.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white/5 backdrop-blur-md p-8 rounded-3xl border border-white/10 shadow-2xl">
+                        <p class="font-medium text-emerald-200 mb-6">
+                            <span class="lang-en">Ready for an adventure? Message us directly:</span>
+                            <span class="lang-vi">Sẵn sàng cho chuyến phiêu lưu? Liên hệ ngay:</span>
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="tel:0911802901" class="bg-white text-emerald-900 px-8 py-3 rounded-full font-bold flex items-center shadow-lg hover:bg-emerald-50 transition">
+                                <i class="fas fa-phone mr-3"></i> 0911.802.901
+                            </a>
+                            <a href="https://wa.me/84911802901" target="_blank" class="bg-green-500 text-white px-8 py-3 rounded-full font-bold flex items-center shadow-lg hover:bg-green-600 transition">
+                                <i class="fab fa-whatsapp mr-3 text-xl"></i> WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="grid grid-cols-2 gap-6 relative z-10">
+                        <div class="space-y-6">
+                            <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Adventure 1" class="rounded-3xl shadow-2xl transform hover:-rotate-2 transition">
+                            <img src="https://images.unsplash.com/photo-1444491741275-3747c53c99b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Adventure 2" class="rounded-3xl shadow-2xl">
+                        </div>
+                        <div class="space-y-6 pt-12">
+                            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Adventure 3" class="rounded-3xl shadow-2xl">
+                            <img src="https://images.unsplash.com/photo-1473679408190-0693dd22fe6a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Adventure 4" class="rounded-3xl shadow-2xl transform hover:rotate-2 transition">
+                        </div>
+                    </div>
+                    <!-- Decorative element -->
+                    <div class="absolute -top-10 -right-10 w-64 h-64 bg-emerald-500/20 rounded-full blur-3xl"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-4xl font-bold mb-6">
+                    <span class="lang-en">Book Your Bike Now</span>
+                    <span class="lang-vi">Đặt xe ngay hôm nay</span>
+                </h2>
+                <p class="text-gray-600 mb-8 text-lg">
+                    <span class="lang-en">Fill out the form below and we will contact you immediately via WhatsApp or Phone to confirm your rental.</span>
+                    <span class="lang-vi">Điền vào form bên dưới và chúng tôi sẽ liên hệ ngay qua WhatsApp hoặc điện thoại để xác nhận đơn thuê xe của bạn.</span>
+                </p>
+                <div class="space-y-6">
+                    <div class="flex items-center gap-4 text-gray-700">
+                        <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <p>24/7 Support for foreign tourists</p>
+                    </div>
+                    <div class="flex items-center gap-4 text-gray-700">
+                        <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <p>Full equipment and map included</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="bg-gray-50 p-10 rounded-3xl border border-gray-100 shadow-xl">
+                <form id="rentalForm" class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide">
+                            <span class="lang-en">Full Name</span>
+                            <span class="lang-vi">Họ và tên</span>
+                        </label>
+                        <input type="text" id="formName" placeholder="Enter your name" required class="w-full px-6 py-4 rounded-2xl border-2 border-transparent focus:border-emerald-500 focus:bg-white bg-white shadow-sm outline-none transition">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide">
+                            <span class="lang-en">Message (Bike type, dates)</span>
+                            <span class="lang-vi">Lời nhắn (Loại xe, ngày thuê)</span>
+                        </label>
+                        <textarea id="formMessage" rows="4" placeholder="How can we help you?" required class="w-full px-6 py-4 rounded-2xl border-2 border-transparent focus:border-emerald-500 focus:bg-white bg-white shadow-sm outline-none transition"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-emerald-600 text-white py-5 rounded-2xl font-bold text-xl hover:bg-emerald-700 transition transform active:scale-95 shadow-lg flex items-center justify-center gap-3">
+                        <i class="fab fa-whatsapp text-2xl"></i>
+                        <span class="lang-en">Submit to WhatsApp</span>
+                        <span class="lang-vi">Gửi qua WhatsApp / Zalo</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Map & Footer -->
+    <footer class="bg-gray-900 text-white pt-24 pb-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mb-20">
+                <div>
+                    <h3 class="text-3xl font-bold mb-8 text-emerald-400">
+                        <span class="lang-en">Visit Our Shop</span>
+                        <span class="lang-vi">Địa chỉ của chúng tôi</span>
+                    </h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-map-marker-alt text-emerald-500 text-xl mt-1"></i>
+                            <div>
+                                <p class="text-xl font-medium">108 Hoàng Diệu</p>
+                                <p class="text-gray-400">Phường Cam Ly, Đà Lạt, Lâm Đồng</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <i class="fas fa-phone-alt text-emerald-500 text-xl"></i>
+                            <p class="text-xl">0911 802 901</p>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <i class="fab fa-whatsapp text-emerald-500 text-2xl"></i>
+                            <p class="text-xl">WhatsApp: 0911 802 901</p>
+                        </div>
+                    </div>
+                    <div class="mt-10 flex gap-4">
+                        <a href="#" class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-emerald-600 transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-emerald-600 transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-emerald-600 transition"><i class="fab fa-tripadvisor"></i></a>
+                    </div>
+                </div>
+                <div class="rounded-3xl overflow-hidden shadow-2xl h-80 border-4 border-white/10">
+                    <!-- Embedded Google Map for Cam Ly Homestay Dalat -->
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3903.4158428414444!2d108.42838497584488!3d11.945672336544975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31711311059f10a7%3A0xc64490805c6d36e2!2sCam%20Ly%20Homestay!5e0!3m2!1svi!2s!4v1710000000000!5m2!1svi!2s"
+                        width="100%"
+                        height="100%"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+            <div class="text-center border-t border-white/10 pt-10 text-gray-500 text-sm">
+                <p>&copy; 2024 Dalat Bike Rental & Adventure Tours. Located at Cam Ly Homestay.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        function toggleLang() {
+            document.body.classList.toggle('lang-vi-active');
+        }
+
+
+        document.getElementById('rentalForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('formName').value;
+            const message = document.getElementById('formMessage').value;
+            const phoneNumber = "84911802901";
+           
+            const isVi = document.body.classList.contains('lang-vi-active');
+            const text = isVi ?
+                `Xin chào, tôi là ${name}. Tôi có yêu cầu thuê xe/tour: ${message}` :
+                `Hello, I am ${name}. I am interested in rental/tour: ${message}`;
+           
+            const encodedText = encodeURIComponent(text);
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedText}`;
+           
+            window.open(whatsappUrl, '_blank');
+        });
+    </script>
+</body>
+</html>
+
+
+
