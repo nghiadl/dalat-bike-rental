@@ -12,7 +12,7 @@
         .lang-vi { display: none; }
         body.lang-vi-active .lang-en { display: none; }
         body.lang-vi-active .lang-vi { display: block; }
-        /* Cập nhật hình ảnh header thành người đạp xe trong thành phố */
+        
         .hero-gradient {
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1541625602330-2277a4c46182?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
@@ -23,6 +23,16 @@
         }
         .bike-card:hover img {
             transform: scale(1.05);
+        }
+        
+        /* Hiệu ứng nổi bật cho thuê theo giờ */
+        .hourly-badge {
+            animation: pulse-orange 2s infinite;
+        }
+        @keyframes pulse-orange {
+            0% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(249, 115, 22, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0); }
         }
     </style>
 </head>
@@ -101,20 +111,52 @@
                 <span class="lang-en">Choose Your Ride</span>
                 <span class="lang-vi">Chọn chiếc xe của bạn</span>
             </h2>
-            <div class="bg-orange-50 border-2 border-orange-200 rounded-2xl p-6 inline-block text-left shadow-sm">
-                <div class="flex items-center gap-4">
-                    <div class="bg-orange-500 text-white p-3 rounded-xl">
-                        <i class="fas fa-calendar-check text-xl"></i>
+            
+            <!-- Pricing Options -->
+            <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
+                <!-- Hourly Rate (New & Highlighted) -->
+                <div class="hourly-badge bg-orange-600 text-white rounded-2xl p-6 text-left shadow-xl transform hover:scale-105 transition min-w-[280px]">
+                    <div class="flex items-center gap-4">
+                        <div class="bg-white/20 p-3 rounded-xl">
+                            <i class="fas fa-clock text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs uppercase font-bold tracking-widest opacity-80">
+                                <span class="lang-en">Hourly Rental</span>
+                                <span class="lang-vi">Thuê theo giờ</span>
+                            </p>
+                            <p class="font-black text-2xl">
+                                <span class="lang-en">50,000 VND / Hour</span>
+                                <span class="lang-vi">50.000 VNĐ / Giờ</span>
+                            </p>
+                            <p class="text-xs mt-1 opacity-90 italic">
+                                <span class="lang-en">*Flexible for short trips</span>
+                                <span class="lang-vi">*Linh hoạt cho dạo phố</span>
+                            </p>
+                        </div>
                     </div>
-                    <div>
-                        <p class="font-bold text-orange-800 text-lg">
-                            <span class="lang-en">200,000 VND / Day</span>
-                            <span class="lang-vi">200.000 VNĐ / Ngày</span>
-                        </p>
-                        <p class="text-orange-600 text-sm">
-                            <span class="lang-en">Return by 08:00 PM (Daily rates only)</span>
-                            <span class="lang-vi">Trả xe trước 20h tối (Chỉ tính theo ngày)</span>
-                        </p>
+                </div>
+
+                <!-- Daily Rate -->
+                <div class="bg-white border-2 border-gray-100 rounded-2xl p-6 text-left shadow-sm min-w-[280px]">
+                    <div class="flex items-center gap-4">
+                        <div class="bg-emerald-100 text-emerald-600 p-3 rounded-xl">
+                            <i class="fas fa-calendar-check text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs uppercase font-bold tracking-widest text-gray-400">
+                                <span class="lang-en">Daily Rental</span>
+                                <span class="lang-vi">Thuê theo ngày</span>
+                            </p>
+                            <p class="font-bold text-xl text-gray-800">
+                                <span class="lang-en">200,000 VND / Day</span>
+                                <span class="lang-vi">200.000 VNĐ / Ngày</span>
+                            </p>
+                            <p class="text-gray-500 text-xs mt-1">
+                                <span class="lang-en">Return by 08:00 PM</span>
+                                <span class="lang-vi">Trả xe trước 20h tối</span>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -138,7 +180,7 @@
                         <span class="lang-vi">Khung sườn nhẹ và ổn định, lý tưởng cho đường đồi núi Đà Lạt.</span>
                     </p>
                     <div class="flex justify-between items-center">
-                        <span class="text-xl font-bold text-gray-900">200k/day</span>
+                        <span class="text-xl font-bold text-gray-900">50k/h | 200k/day</span>
                         <a href="https://wa.me/84911802901" class="text-emerald-600 font-semibold hover:underline">Book Now &rarr;</a>
                     </div>
                 </div>
@@ -161,7 +203,7 @@
                         <span class="lang-vi">Hệ thống giảm xóc và bộ truyền động nâng cấp cho hành trình mượt mà.</span>
                     </p>
                     <div class="flex justify-between items-center">
-                        <span class="text-xl font-bold text-gray-900">200k/day</span>
+                        <span class="text-xl font-bold text-gray-900">50k/h | 200k/day</span>
                         <a href="https://wa.me/84911802901" class="text-emerald-600 font-semibold hover:underline">Book Now &rarr;</a>
                     </div>
                 </div>
@@ -184,7 +226,7 @@
                         <span class="lang-vi">Xe địa hình đáng tin cậy với phanh đĩa dầu an toàn vượt trội.</span>
                     </p>
                     <div class="flex justify-between items-center">
-                        <span class="text-xl font-bold text-gray-900">200k/day</span>
+                        <span class="text-xl font-bold text-gray-900">50k/h | 200k/day</span>
                         <a href="https://wa.me/84911802901" class="text-emerald-600 font-semibold hover:underline">Book Now &rarr;</a>
                     </div>
                 </div>
@@ -394,6 +436,3 @@
     </script>
 </body>
 </html>
-
-
-
